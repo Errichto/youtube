@@ -16,7 +16,7 @@ int f() {
     return -1;
 }
 
-// 2) Looking for the index of the first element that satisfied some property.
+// 2) Looking for the index of the first element that satisfies some property.
 // F F T T T T <- find first index that has TRUE
 int f() {
     int left = 0, right = n - 1; // add +1 to 'right' if the answer can be outside [left, right]

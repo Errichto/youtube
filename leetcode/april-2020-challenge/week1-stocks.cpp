@@ -48,8 +48,8 @@ int greedy_solve(vector<int> prices) {
 	// no prefix sum can be negative
 	vector<int> decision(n, +1);
 	
-	auto is_ok = [&]() {
-		int pref = 0;
+	auto is_ok = [&]() { // use segment trees instead of linear check
+		int pref = 0; // get get O(N*log(N)) total time complexity
 		for(int x : decision) {
 			pref += x;
 			if(pref < 0) {
@@ -70,7 +70,7 @@ int greedy_solve(vector<int> prices) {
 		if(is_ok()) {
 			continue;
 		}
-		// ok, we must sell at this price
+		// ok, we must buy at this price
 		decision[where] = +1;
 		assert(is_ok());
 	}

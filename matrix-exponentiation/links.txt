@@ -1,0 +1,5 @@
+Matrix Exponentiation
+video tutorial - https://www.youtube.com/watch?v=eMXNWcbw75E
+Codeforces article with discussion, hints and text tutorial - https://codeforces.com/blog/entry/80195
+editorial for easy problems ABCDEF - https://www.youtube.com/watch?v=kQuCOFzWoa0
+editorial for hard problems GHI - https://www.youtube.com/watch?v=RA_SpxP2t54

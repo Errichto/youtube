@@ -182,7 +182,7 @@ struct Circle {
 			for(int i = 0; i < (int) min(one.size(), two.size()); ++i)
 				ret.push_back(L2{one[i], two[i]});
 		};
-		if(abs(r - he.r < 1e-9)) { // beka z nawiasow XD
+		if(abs(r - he.r) < 1e-9) { // beka z nawiasow XD
 			P dir = (he.o - o).rotate90().scaleTo(r);
 			for(int tmp : {1, -1})
 				ret.push_back(L2{o + dir * tmp, he.o + dir * tmp});

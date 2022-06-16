@@ -53,34 +53,33 @@ public:
 
 class Solution {
 public:
+    
+    int best_len = 0;
+    string best_s = "";
+    int best_start , best_end;
+    
+    void optimal(int a , int b){
+        best_len = a;
+        best_start = b;
+        best_end = a;
+    }
+    
     string longestPalindrome(string s) {
-        int best_len = 0;
-        string best_s = "";
-        int n = s.length();
-        for(int mid = 0; mid < n; mid++) {
-            for(int x = 0; mid - x >= 0 && mid + x < n; x++) {
-                if(s[mid-x] != s[mid+x]) {
-                    break;
-                }
+        int n = s.size();
+        for(int mid = 0; mid < n; mid++){
+            for(int x = 0 ; mid - x >=0 and mid + x < n; x++){
+                if(s[mid - x] != s[mid + x]) break;
                 int len = 2 * x + 1;
-                if(len > best_len) {
-                    best_len = len;
-                    best_s = s.substr(mid - x, len);
-                }
+                if(len > best_len) optimal(len,mid - x);
             }
         }
-        for(int mid = 0; mid < n - 1; mid++) {
-            for(int x = 1; mid - x + 1 >= 0 && mid + x < n; x++) {
-                if(s[mid-x+1] != s[mid+x]) {
-                    break;
-                }
+        for(int mid = 0; mid < n - 1; mid++){
+            for(int x = 1; mid - x + 1 >= 0 and mid + x < n; x++){
+                if(s[mid - x + 1] != s[mid + x]) break;
                 int len = 2 * x;
-                if(len > best_len) {
-                    best_len = len;
-                    best_s = s.substr(mid - x + 1, len);
-                }
+                if(len > best_len) optimal(len,mid - x + 1);
             }
         }
-        return best_s;
+        return s.substr(best_start,best_end);
     }
 };
